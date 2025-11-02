@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Avoid loading partial output on waybar at startup.
+while ! ping -c1 api.open-meteo.com &>/dev/null; do
+    sleep 1
+done
+
 #Set city and province.
 city="Brusciano"
 province="Naples"
