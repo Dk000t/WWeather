@@ -1,4 +1,4 @@
-#WWeather
+# WWeather
 
 WWeather is a Waybar Weather module.
 
