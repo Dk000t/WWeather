@@ -43,7 +43,7 @@ if [ "$is_day" -eq 1 ]; then
   esac
 else
   case $icon in
-    0)						icon="";;	#Sun
+    0)						icon="";;	#Moon
     1|2|3)					icon="";;	#Cloud
     45|48)        				icon="";;	#Fog
     71|73|75|77|85|86)     			icon="";;	#Snow
@@ -53,4 +53,4 @@ else
 fi
 
 #Output the icon and temperature.
-echo "  ${icon} ${temperature}°C"
+echo "${icon} ${temperature}°C"
