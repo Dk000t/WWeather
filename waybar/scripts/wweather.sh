@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Avoid loading partial output on waybar at startup.
+#Avoid to load partial output on waybar at startup.
 while ! ping -c1 api.open-meteo.com &>/dev/null; do
     sleep 1
 done
@@ -28,15 +28,29 @@ temperature=$(echo "$weather" | jq -r '.current_weather.temperature | floor')
 #Extract weathercode.
 icon=$(echo "$weather" | jq -r '.current_weather.weathercode')
 
+#Extract day/night indicator.
+is_day=$(echo "$weather" | jq -r '.current_weather.is_day')
+
 #Convert weathercode to icon.
-case $icon in
-  0)						icon="";;	#Sun
-  1|2|3)					icon="";;	#Cloud
-  45|48)        				icon="";;	#Fog
-  71|73|75|77|85|86)     			icon="";;	#Snow
-  51|53|55|56|57|61|63|65|66|67|80|81|82)       icon="";;	#Rain
-  95|96|99)        				icon="";;	#Thunderstorm
-esac
+if [ "$is_day" -eq 1 ]; then
+  case $icon in
+    0)						icon="";;	#Sun
+    1|2|3)					icon="";;	#Cloud
+    45|48)        				icon="";;	#Fog
+    71|73|75|77|85|86)     			icon="";;	#Snow
+    51|53|55|56|57|61|63|65|66|67|80|81|82)     icon="";;	#Rain
+    95|96|99)        				icon="";;	#Thunderstorm
+  esac
+else
+  case $icon in
+    0)						icon="";;	#Sun
+    1|2|3)					icon="";;	#Cloud
+    45|48)        				icon="";;	#Fog
+    71|73|75|77|85|86)     			icon="";;	#Snow
+    51|53|55|56|57|61|63|65|66|67|80|81|82)     icon="";;	#Rain
+    95|96|99)        				icon="";;	#Thunderstorm
+  esac
+fi
 
 #Output the icon and temperature.
-echo "  ${icon} ${temperature}°C "
+echo "  ${icon} ${temperature}°C"
