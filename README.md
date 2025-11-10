@@ -15,4 +15,5 @@ Waybar config:
  }
 }
 ```
-**The icons used are part of Font Awesome.**
+
+<img width="74" height="35" alt="sample" src="https://github.com/user-attachments/assets/c9d81dbe-8290-4db5-a0d7-a5abdcee3acf" />
