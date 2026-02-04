@@ -40,12 +40,12 @@ if [[ "$icon" -eq 0 ]]; then
   fi
 else
   case $icon in
-    1|2|3)                     			icon="☁️" ;;  # Cloud
-    71|73|75|77|85|86)         			icon="🌨";;   # Snow
-    51|53|55|56|57|61|63|65|66|67|80|81|82) 	icon="🌧";;   # Rain
-    95|96|99)                  			icon="🌩";;   # Thunderstorm
+    1|2|3|45)                     			icon="☁️" ;;  # Cloud
+    71|73|75|77|85|86)         			icon="🌨️";;   # Snow
+    51|53|55|56|57|61|63|65|66|67|80|81|82) 	icon="🌧️";;   # Rain
+    95|96|99)                  			icon="⛈️";;   # Thunderstorm
   esac
 fi
 
 #Output the icon and temperature.
-echo "${icon} ${temperature}°C"
+echo "${icon}  ${temperature}°C"
