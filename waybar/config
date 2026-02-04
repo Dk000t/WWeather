@@ -1,8 +1,8 @@
 {
- "custom/weather": {
- "format": "{}",
- "exec": "~/.config/waybar/scripts/wweather.sh",
- "interval": 3600,
- "tooltip": false
- }
+  "custom/weather": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/wweather.sh",
+    "interval": 600,
+    "tooltip": false
+  }
 }
