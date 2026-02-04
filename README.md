@@ -11,11 +11,11 @@ The script uses the Open-Meteo API, retrieving weather data based on the latitud
 Waybar config:
 ```
 {
- "custom/weather": {
- "format": "{}",
- "exec": "~/.config/waybar/scripts/wweather.sh",
- "interval": 3600,
- "tooltip": false
- }
+  "custom/weather": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/wweather.sh",
+    "interval": 600,
+    "tooltip": false
+  }
 }
 ```
