@@ -52,4 +52,4 @@ else
 fi
 
 # Output the icon, temperature and temperature unit
-echo "  ${icon}  ${temperature} ${unit_text}"
+echo "${icon}  ${temperature} ${unit_text}"
